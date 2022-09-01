@@ -3,17 +3,6 @@ import Head from "next/head";
 import { PostCard, Categories, PostWidget } from "../components";
 import { getPosts } from "../services";
 
-// const posts = [
-//   {
-//     title: "React Test",
-//     excerpt: "Learn React Testing",
-//   },
-//   {
-//     title: "React CSS",
-//     excerpt: "Learn Styled components",
-//   },
-// ];
-
 const Home: NextPage<any> = ({ posts }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
