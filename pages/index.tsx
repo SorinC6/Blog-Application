@@ -15,7 +15,6 @@ import { getPosts } from "../services";
 // ];
 
 const Home: NextPage<any> = ({ posts }) => {
-  console.log("posts", posts);
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -25,7 +24,7 @@ const Home: NextPage<any> = ({ posts }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post: Object, index: number) => (
-            <PostCard post={post} key={index} />
+            <PostCard post={post?.node} key={index} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
