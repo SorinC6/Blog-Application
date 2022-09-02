@@ -17,7 +17,7 @@ const ArticleDetails = ({ post }) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div className="col-span-1 lg:col-span-8">
                     <PostDetails post={post} />
-                    <Author author={post.author} />
+                    <Author author={post.authors[0]} />
                     <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
                     <CommentsForm slug={post.slug} />
                     <Comments slug={post.slug} />
