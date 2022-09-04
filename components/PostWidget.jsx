@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPost] = useState([]);
-  console.log("relatedPost", relatedPosts);
 
   useEffect(() => {
     if (slug) {

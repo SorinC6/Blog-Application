@@ -6,7 +6,6 @@ import Link from "next/link";
 import { grpahCMSImageLoader } from "../util";
 
 const PostCard = ({ post }) => {
-  console.log("post", post);
   return (
     <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
@@ -28,7 +27,7 @@ const PostCard = ({ post }) => {
             height="30px"
             width="30px"
             className="align-middle rounded-full"
-            src={post.authors[0].photo.url}
+            src={post.authors[0]?.photo?.url}
           />
           <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">
             {post.authors[0].name}
