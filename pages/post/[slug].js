@@ -17,13 +17,13 @@ const ArticleDetails = ({ post }) => {
                 <div className="col-span-1 lg:col-span-8">
                     <PostDetails post={post} />
                     <Author author={post?.authors[0]} />
-                    <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
-                    <CommentsForm slug={post.slug} />
-                    <Comments slug={post.slug} />
+                    <AdjacentPosts slug={post?.slug} createdAt={post?.createdAt} />
+                    <CommentsForm slug={post?.slug} />
+                    <Comments slug={post?.slug} />
                 </div>
                 <div className="col-span-1 lg:col-span-4">
                     <div className="relative lg:sticky top-8">
-                        <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
+                        <PostWidget slug={post?.slug} categories={post?.categories.map((category) => category?.slug)} />
                         <Categories />
                     </div>
                 </div>
