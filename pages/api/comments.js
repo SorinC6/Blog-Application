@@ -10,7 +10,6 @@ const graphqlToken = process.env.NEXT_PUBLIC_GRAPHQL_CMS_TOKEN
 
 // export a default function for API route to work
 export default async function asynchandler(req, res) {
-    console.log("graphqlToken", { graphqlToken })
     const graphQLClient = new GraphQLClient((graphqlAPI), {
         headers: {
             authorization: `Bearer ${graphqlToken}`,

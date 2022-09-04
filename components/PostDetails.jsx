@@ -4,8 +4,6 @@ import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const PostDetails = ({ post }) => {
-  console.log("post.content.raw", post.content.raw);
-
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
