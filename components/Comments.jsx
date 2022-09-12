@@ -12,7 +12,6 @@ const Comments = ({ slug }) => {
       setComments(result);
     });
   }, []);
-
   return (
     <>
       {comments.length > 0 && (
