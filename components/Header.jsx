@@ -52,11 +52,11 @@ const Header = () => {
     ));
 
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto px-5 mb-8">
       <div className="border-b w-full inline-block border-blue-400 py-8">
         <div className="flex flex-col">
           <div>
-            <div className="md:float-left flex w-1/2">
+            <div className="md:float-left flex w-full flex-col sm:flex-row">
               <Link href="/" className="w-40">
                 <div className="cursor-pointer font-bold text-3xl text-white">
                   TechBlog

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import React, { useEffect } from "react";
-import useComponentVisible from "../hooks/useComponentVisible";
+import { useDetectClickOutside } from "react-detect-click-outside";
+import { useRouter } from "next/router";
 
 const SearchBar = ({
   searchValue,
@@ -7,19 +9,23 @@ const SearchBar = ({
   searchResults,
   setSearchResults,
 }) => {
-  console.log("searchResults", searchResults);
-  const { ref, isComponentVisible } = useComponentVisible(true);
+  const router = useRouter();
+
+  const ref = useDetectClickOutside({
+    onTriggered: () => {
+      setSearchResults([]);
+      setSearchValue("");
+    },
+  });
 
   useEffect(() => {
-    if (!isComponentVisible) {
-      setSearchResults([]);
-      setSearchValue([]);
-    }
-  }, [isComponentVisible]);
+    setSearchResults([]);
+    setSearchValue("");
+  }, [router.pathname]);
 
   return (
-    <div ref={ref}>
-      <div className="w-full mx-auto ml-10">
+    <div ref={ref} className="w-full md:mr-10  lg:w-1/2">
+      <div className="w-full mx-auto sm:ml-10">
         <div className="relative">
           <div className="h-10 bg-white flex border border-gray-200 rounded items-center">
             <input
@@ -27,7 +33,7 @@ const SearchBar = ({
               onChange={(e) => setSearchValue(e.target.value)}
               name="select"
               id="select"
-              className="px-4 appearance-none outline-none text-gray-800 w-full"
+              className="md:px-4 appearance-none outline-none text-gray-800 w-full"
             />
 
             <button
@@ -80,35 +86,18 @@ const SearchBar = ({
               searchResults.map(({ node }) => {
                 return (
                   <div className="cursor-pointer group">
-                    <a className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">
-                      {node.title}
-                    </a>
+                    <Link
+                      href={`/post/${node.slug}`}
+                      className="block border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100  font-semibold"
+                    >
+                      <p className="px-2 py-2 text-sm border-l-4 hover:border-blue-600">
+                        {node.title}
+                      </p>
+                    </Link>
                   </div>
                 );
               })}
           </div>
-          {/* <div className="absolute rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200 z-50">
-          <div className="cursor-pointer group">
-            <a className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">
-              Python
-            </a>
-          </div>
-          <div className="cursor-pointer group border-t">
-            <a className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">
-              Javascript
-            </a>
-          </div>
-          <div className="cursor-pointer group border-t">
-            <a className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">
-              Node
-            </a>
-          </div>
-          <div className="cursor-pointer group border-t">
-            <a className="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">
-              PHP
-            </a>
-          </div>
-        </div> */}
         </div>
       </div>
     </div>
