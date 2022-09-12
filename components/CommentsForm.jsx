@@ -83,7 +83,7 @@ const CommentsForm = ({ slug }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+      <h3 className="text-lg mb-8 font-semibold border-b pb-4">
         Leave a Reply
       </h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
@@ -141,7 +141,7 @@ const CommentsForm = ({ slug }) => {
           Post Comment
         </button>
         {showSuccessMessage && (
-          <span className="text-xl float-right font-semibold mt-3 text-green-500">
+          <span className="text-lg float-right font-semibold mt-3 text-green-500">
             Comment submitted for review
           </span>
         )}

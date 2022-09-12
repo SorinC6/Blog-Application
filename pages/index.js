@@ -5,7 +5,7 @@ import { FeaturedPosts } from "../sections/index";
 
 const Home = ({ posts }) => {
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto px-5 mb-8 lg:px-10">
       <Head>
         <title>Student Blog</title>
         <link rel="icon" href="/favicon.ico" />
