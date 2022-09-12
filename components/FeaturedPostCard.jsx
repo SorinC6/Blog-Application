@@ -14,7 +14,7 @@ const FeaturedPostCard = ({ post }) => (
       <p className="text-white mb-4 text-shadow font-semibold text-xs">
         {moment(post?.createdAt).format("MMM DD, YYYY")}
       </p>
-      <p className="text-white mb-4 text-shadow font-semibold text-xl text-center">
+      <p className="text-white mb-4 text-shadow font-semibold text-base text-center md:text-1xl">
         {post?.title}
       </p>
       <div className="flex items-center absolute bottom-5 w-full justify-center">
@@ -26,7 +26,7 @@ const FeaturedPostCard = ({ post }) => (
           className="align-middle drop-shadow-lg rounded-full"
           src={post?.authors[0]?.photo?.url}
         />
-        <p className="inline align-middle text-white text-shadow ml-2 font-medium">
+        <p className="inline align-middle text-white text-shadow ml-2 font-medium text-sm">
           {post.authors[0]?.name}
         </p>
       </div>
